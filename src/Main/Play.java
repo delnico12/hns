@@ -23,15 +23,17 @@ public class Play extends BasicGameState{
 	private SpriteSheet cubeSheetUp, cubeSheetDown,cubeSheetLeft,cubeSheetRight;
 	private Animation cubeAnimationUp,cubeAnimationDown,cubeAnimationLeft,cubeAnimationRight;
 	private int playerTouch = 0;
+	private TileMap gameMap;
 	
 	
 	public Play(int State) {
 		
 	}
+	
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException  {
 		/* Images */
 		cube = new Image("res/cube.png");
-		map = new Image("res/world.png");
+		
 		
 		/* SpriteSheet */
 		cubeSheetUp = new SpriteSheet("res/cubeUp.png", 32 , 32);
@@ -47,14 +49,14 @@ public class Play extends BasicGameState{
 		
 		
 		/* map */
-		TileMap q = new TileMap();
+		gameMap = new TileMap();
 		
 	}
 	
 	public void render (GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException{
 		/* Start */
 		cube.draw(shiftX,shiftY);
-		map.draw(cubePosX,cubePosY);
+		gameMap.render(gc,sbg,g);
 		
 		
 		/* Switch Player Touch */

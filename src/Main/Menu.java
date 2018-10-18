@@ -57,16 +57,7 @@ public class Menu extends BasicGameState{
 		
 		hitboxMouse = new Rectangle(posMouse.x, posMouse.y, 1, 1);
 		
-		/*if( (xpos>(Game.width/2-(Game.width/12)) && xpos<(Game.width/2-(Game.width/12)+200)) && (ypos>(Game.height/2+90) && ypos<((Game.height/2+120)))) {
-			if (input.isMouseButtonDown(0)) {
-				sbg.enterState(1);
-			}
-		}
-		if((xpos>(Game.width/2-(Game.width/12))&& xpos<(Game.width/2-(Game.width/12)+200)) && (ypos>(Game.height/2+30) && ypos<(Game.height/2+60))) {
-			if (input.isMouseButtonDown(0)) {
-				System.exit(0);
-			}
-		}*/
+		
 		
 		if(hitboxMouse.intersects(hitboxPlayNow)) {
 			if (input.isMouseButtonDown(0)) {
