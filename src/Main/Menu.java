@@ -15,7 +15,7 @@ public class Menu extends BasicGameState{
 	Image playNow;
 	Image exitGame;
 	
-	public Menu(int State) {
+	public Menu(int state) {
 		
 	}
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException  {
@@ -26,9 +26,9 @@ public class Menu extends BasicGameState{
 	
 	public void render (GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException{
 		/* Text Menu */
-		g.drawString("Welcome to Cubby", Game.width/2-(Game.width/12), Game.height/2-180);
-		playNow.draw(Game.width/2-(Game.width/12),Game.height/2-120);
-		exitGame.draw(Game.width/2-(Game.width/12),Game.height/2-60);
+		g.drawString("Welcome to Cuby", Game.width/2-(Game.width/12), Game.height/2-180);
+		playNow.draw((Game.width / 2) - (playNow.getWidth() / 2), (Game.height / 2) - (playNow.getHeight() / 2));
+		exitGame.draw((Game.width / 2) - (exitGame.getWidth() / 2), (Game.height / 2) - (exitGame.getHeight() / 2) + 100);
 		
 		/* test*/
 		int buttonY1 = Game.height/2+90;
