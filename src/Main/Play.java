@@ -118,7 +118,7 @@ public class Play extends BasicGameState{
 		}
 		
 			/* Outside Menu*/
-		else if(input.isKeyDown(Input.KEY_Z)) {
+		if(input.isKeyDown(Input.KEY_Z)) {
 			
 			cubePosY += delta;
 			playerTouch = 1;
@@ -139,7 +139,6 @@ public class Play extends BasicGameState{
 			
 			quit = true;
 		}
-			
 		else {
 			playerTouch = 0;
 		}
