@@ -17,7 +17,7 @@ public class Game extends StateBasedGame {
 	public static final String gameName = "Cuby" ;
 	public static final int menu =0;
 	public static final int play =1;
-	
+	/* map */
 	
 	public Game(String gameName) {
 		super(gameName);
