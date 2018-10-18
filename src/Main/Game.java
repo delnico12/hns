@@ -13,7 +13,7 @@ import org.newdawn.slick.state.*;
 
 public class Game extends StateBasedGame {
 	
-	public static int width = 1280;
+	public static int width = 1280; // Largeur fênetre
 	public static int height = 720;
 	public static final String gameName = "Cuby" ;
 	public static final int menu =0;
