@@ -17,7 +17,7 @@ public class Game extends StateBasedGame {
 	public static int height = 720;  // SALUT
 	public static final String gameName = "Cuby" ; // cc
 	public static final int menu =0;
-	public static final int play =1;
+	public static final int play =1; // abcd
 	/* map */
 	
 	public Game(String gameName) {
