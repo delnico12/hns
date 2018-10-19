@@ -1,4 +1,4 @@
-package main;
+package game_state;
 
 import org.newdawn.slick.*;
 import org.newdawn.slick.GameContainer;
@@ -8,12 +8,13 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 import elements.gui.screen.TileMap;
+import main.Game;
 
 import org.newdawn.slick.state.*;
 
 
 
-public class Play extends BasicGameState{
+public class PlayState extends BasicGameState{
 	
 	Image map;
 	boolean quit = false;
@@ -29,7 +30,7 @@ public class Play extends BasicGameState{
 	private TileMap gameMap;
 	
 	
-	public Play(int State) {
+	public PlayState(int State) {
 		
 	}
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException  {

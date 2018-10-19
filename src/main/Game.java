@@ -9,6 +9,10 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
+
+import game_state.MenuState;
+import game_state.PlayState;
+
 import org.newdawn.slick.state.*;
 
 public class Game extends StateBasedGame {
@@ -24,8 +28,8 @@ public class Game extends StateBasedGame {
 	
 	public Game(String gameName) {
 		super(gameName);
-		this.addState(new Menu(menu));
-		this.addState(new Play(play));
+		this.addState(new MenuState(menu));
+		this.addState(new PlayState(play));
 		
 	}
 	

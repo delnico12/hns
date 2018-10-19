@@ -1,4 +1,4 @@
-package main;
+package game_state;
 
 
 import org.newdawn.slick.GameContainer;
@@ -12,9 +12,10 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 import elements.gui.ressources.Button;
+import main.Game;
 
 
-public class Menu extends BasicGameState{
+public class MenuState extends BasicGameState{
 	
 	Image playNow; // Img bouton
 	Image exitGame; // Img bouton
@@ -26,7 +27,7 @@ public class Menu extends BasicGameState{
 	
 	Button play, quit; // Bouton
 	
-	public Menu(int state) {
+	public MenuState(int state) {
 		
 	}
 	
