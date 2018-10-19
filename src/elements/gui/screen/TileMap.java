@@ -12,12 +12,7 @@ import main.Game;
 
 
 public class TileMap extends BasicGameState {
-	
-	
-	
-	
-	
-	
+		
 	
 	
 	int genericMap[][]={{ 0 ,0 ,0, 0, 0, 0, 0, 0, 0, 0, 0 ,0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -59,7 +54,8 @@ public class TileMap extends BasicGameState {
 		for(int i = 0; i < genericMap.length; i++){
 			   for(int j = 0; j < genericMap[i].length; j++){
 					   /*System.out.println(" i vaut :"+i+" "+"j vaut : "+j+" La case vaut : "+genericMap[i][j]);*/
-					   if(genericMap[i][j] == 0 ) {g.drawRect(i*Game.cell,j*Game.cell, 32, 32);}
+				   		System.out.println(genericMap[i].length/2+20*Game.cell);
+				   		if(genericMap[i][j] == 0 ) {g.drawRect((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
 					   
 				   
 				 
