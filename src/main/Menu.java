@@ -16,15 +16,15 @@ import elements.gui.ressources.Button;
 
 public class Menu extends BasicGameState{
 	
-	Image playNow;
-	Image exitGame;
+	Image playNow; // Img bouton
+	Image exitGame; // Img bouton
 	
 	Vector2f posPlayNow, posExitGame; // Position des boutons du menu
 	Vector2f posMouse; // Position de la souris
 	
 	Rectangle hitboxPlayNow, hitboxExitGame; // Hitbox des boutons
 	
-	Button play, quit;
+	Button play, quit; // Bouton
 	
 	public Menu(int state) {
 		
