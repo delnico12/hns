@@ -1,4 +1,4 @@
-package Main;
+package main;
 
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.GameContainer;
