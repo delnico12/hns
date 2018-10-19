@@ -1,4 +1,4 @@
-package Main;
+package main;
 
 
 
@@ -18,6 +18,8 @@ public class Game extends StateBasedGame {
 	public static final String gameName = "Cuby" ; 
 	public static final int menu =0;
 	public static final int play =1; 
+	public static final int cell = 32;
+	
 	/* map */
 	
 	public Game(String gameName) {

@@ -1,4 +1,4 @@
-package Main;
+package main;
 
 import org.newdawn.slick.*;
 import org.newdawn.slick.GameContainer;
@@ -6,6 +6,9 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
+
+import elements.gui.screen.TileMap;
+
 import org.newdawn.slick.state.*;
 
 
@@ -29,7 +32,6 @@ public class Play extends BasicGameState{
 	public Play(int State) {
 		
 	}
-	
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException  {
 		/* Images */
 		cube = new Image("res/cube.png");
@@ -54,9 +56,12 @@ public class Play extends BasicGameState{
 	}
 	
 	public void render (GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException{
+		
 		/* Start */
-		cube.draw(shiftX,shiftY);
 		gameMap.render(gc,sbg,g);
+		cube.draw(shiftX,shiftY);
+		
+		
 		
 		
 		/* Switch Player Touch */
@@ -120,7 +125,7 @@ public class Play extends BasicGameState{
 		}
 		
 			/* Outside Menu*/
-		if(input.isKeyDown(Input.KEY_Z)) {
+		else if(input.isKeyDown(Input.KEY_Z)) {
 			
 			cubePosY += delta;
 			playerTouch = 1;
@@ -141,6 +146,7 @@ public class Play extends BasicGameState{
 			
 			quit = true;
 		}
+			
 		else {
 			playerTouch = 0;
 		}
