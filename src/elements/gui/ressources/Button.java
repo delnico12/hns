@@ -32,6 +32,13 @@ public class Button {
 			return false;
 	}
 	
+	public boolean isClicked(Input input) {
+		if(isHover(input) && input.isMouseButtonDown(Input.MOUSE_LEFT_BUTTON))
+			return true;
+		else
+			return false;
+	}
+	
 	public float getX() {
 		return this.pos.x;
 	}

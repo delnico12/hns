@@ -55,9 +55,9 @@ public class Menu extends BasicGameState{
 	public void update (GameContainer gc, StateBasedGame sbg, int delta) throws SlickException{
 		Input input = gc.getInput();
 		
-		if(play.isHover(input) && input.isMouseButtonDown(Input.MOUSE_LEFT_BUTTON))
+		if(play.isHover(input) && play.isClicked(input))
 			sbg.enterState(1);
-		if(quit.isHover(input) && input.isMouseButtonDown(Input.MOUSE_LEFT_BUTTON))
+		if(quit.isHover(input) && quit.isClicked(input))
 			System.exit(0);
 	}
 	
