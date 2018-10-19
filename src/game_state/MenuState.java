@@ -21,7 +21,6 @@ public class MenuState extends BasicGameState{
 	Image exitGame; // Img bouton
 	
 	Vector2f posPlayNow, posExitGame; // Position des boutons du menu
-	Vector2f posMouse; // Position de la souris
 	
 	Rectangle hitboxPlayNow, hitboxExitGame; // Hitbox des boutons
 	
