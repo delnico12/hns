@@ -1,7 +1,6 @@
 package main;
 
 
-import org.lwjgl.input.Mouse;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -11,6 +10,8 @@ import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Vector2f;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
+
+import elements.gui.ressources.Button;
 
 
 public class Menu extends BasicGameState{
@@ -22,7 +23,8 @@ public class Menu extends BasicGameState{
 	Vector2f posMouse; // Position de la souris
 	
 	Rectangle hitboxPlayNow, hitboxExitGame; // Hitbox des boutons
-	Rectangle hitboxMouse; // Hitbox de la souris
+	
+	Button play, quit;
 	
 	public Menu(int state) {
 		
@@ -34,41 +36,29 @@ public class Menu extends BasicGameState{
 		
 		posPlayNow = new Vector2f((Game.width / 2) - (playNow.getWidth() / 2), (Game.height / 2) - (playNow.getHeight() / 2));
 		posExitGame = new Vector2f((Game.width / 2) - (exitGame.getWidth() / 2), (Game.height / 2) - (exitGame.getHeight() / 2) + 100);
-		
-		posMouse = new Vector2f(0, 0);
-		
+				
 		hitboxPlayNow = new Rectangle(posPlayNow.x, posPlayNow.y, playNow.getWidth(), playNow.getHeight());
 		hitboxExitGame = new Rectangle(posExitGame.x, posExitGame.y, exitGame.getWidth(), exitGame.getHeight());		
+	
+		play = new Button(playNow, posPlayNow, hitboxPlayNow);
+		quit = new Button(exitGame, posExitGame, hitboxExitGame);
 	}
 	
 	public void render (GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException{
 		/* Text Menu */
 		g.drawString("Welcome to Cuby", Game.width/2-(Game.width/12), Game.height/2-180);
 		
-		playNow.draw(posPlayNow.x, posPlayNow.y);
-		exitGame.draw(posExitGame.x, posExitGame.y);
+		play.render();
+		quit.render();
 	}
 	
 	public void update (GameContainer gc, StateBasedGame sbg, int delta) throws SlickException{
 		Input input = gc.getInput();
 		
-		posMouse.x = input.getMouseX();
-		posMouse.y = input.getMouseY();
-		
-		hitboxMouse = new Rectangle(posMouse.x, posMouse.y, 1, 1);
-		
-		
-		
-		if(hitboxMouse.intersects(hitboxPlayNow)) {
-			if (input.isMouseButtonDown(0)) {
-				sbg.enterState(1);
-			}
-		}
-		if(hitboxMouse.intersects(hitboxExitGame)) {
-			if (input.isMouseButtonDown(0)) {
-				System.exit(0);
-			}
-		}
+		if(play.isHover(input) && input.isMouseButtonDown(Input.MOUSE_LEFT_BUTTON))
+			sbg.enterState(1);
+		if(quit.isHover(input) && input.isMouseButtonDown(Input.MOUSE_LEFT_BUTTON))
+			System.exit(0);
 	}
 	
 	public int getID() {
