@@ -55,7 +55,7 @@ public class TileMap extends BasicGameState {
 			   for(int j = 0; j < genericMap[i].length; j++){
 				   		
 				   		
-				   		/* map center block*/
+				   		/* map center block */
 				   		if(genericMap[i][j] == 0 ) {GameImage.floor.draw((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
 				   
 				   		/* map border*/
