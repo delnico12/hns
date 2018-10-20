@@ -1,6 +1,5 @@
 package game_state;
 
-
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -12,7 +11,7 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 import elements.gui.ressources.Button;
-import elements.gui.ressources.GameImage;
+import elements.gui.ressources.Text;
 import main.Game;
 
 
@@ -21,11 +20,12 @@ public class MenuState extends BasicGameState{
 	Image playNow; // Img bouton
 	Image exitGame; // Img bouton
 	
-	Vector2f posPlayNow, posExitGame; // Position des boutons du menu
+	Vector2f posPlayNow, posExitGame; // Position des boutons
 	
 	Rectangle hitboxPlayNow, hitboxExitGame; // Hitbox des boutons
 	
 	Button play, quit; // Bouton
+	Text welcome;
 	
 	public MenuState(int state) {
 		
@@ -43,12 +43,15 @@ public class MenuState extends BasicGameState{
 	
 		play = new Button(playNow, posPlayNow, hitboxPlayNow);
 		quit = new Button(exitGame, posExitGame, hitboxExitGame);
+		
+		welcome = new Text("Verdana", 15, new Vector2f(0, 0), "Welcome to Cuby");
+		welcome.setX((Game.width / 2) - (welcome.getWidth() / 2));
+		welcome.setY((Game.height / 2) - (welcome.getHeight() / 2) - 200);
 	}
 	
 	public void render (GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException{
 		/* Text Menu */
-		g.drawString("Welcome to Cuby", Game.width/2-(Game.width/12), Game.height/2-180);
-		
+		welcome.drawFont();
 		play.render();
 		quit.render();
 	}
