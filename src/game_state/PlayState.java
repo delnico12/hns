@@ -22,8 +22,8 @@ public class PlayState extends BasicGameState{
 	int[] duration = {200,200};
 	float cubePosX = 0;
 	float cubePosY = 0;
-	float shiftX = cubePosX + Game.width/2;
-	float shiftY = cubePosY +Game.height/2;
+	float shiftX = cubePosX + Game.WIDTH/2;
+	float shiftY = cubePosY +Game.HEIGHT/2;
 	private Image cube;
 	private SpriteSheet cubeSheetUp, cubeSheetDown,cubeSheetLeft,cubeSheetRight;
 	private Animation cubeAnimationUp,cubeAnimationDown,cubeAnimationLeft,cubeAnimationRight;
@@ -95,11 +95,11 @@ public class PlayState extends BasicGameState{
 		/* Quit Menu */
 		if(quit == true) {
 				g.setColor(Color.gray);
-				g.fillRect(Game.width/2-(Game.width/12), Game.height/2-180,200, 150);
+				g.fillRect(Game.WIDTH/2-(Game.WIDTH/12), Game.HEIGHT/2-180,200, 150);
 				g.setColor(Color.blue);
-				g.drawString("Resume (R)",(Game.width/2-(Game.width/15)),Game.height/2-60);
-				g.drawString("Main Menu (M)",(Game.width/2-(Game.width/15)),Game.height/2-120);
-				g.drawString("Quit Game (Q)",(Game.width/2-(Game.width/15)),Game.height/2-180);				
+				g.drawString("Resume (R)",(Game.WIDTH/2-(Game.WIDTH/15)),Game.HEIGHT/2-60);
+				g.drawString("Main Menu (M)",(Game.WIDTH/2-(Game.WIDTH/15)),Game.HEIGHT/2-120);
+				g.drawString("Quit Game (Q)",(Game.WIDTH/2-(Game.WIDTH/15)),Game.HEIGHT/2-180);				
 		}
 		
 		

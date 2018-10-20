@@ -11,34 +11,34 @@ import game_state.PlayState;
 
 public class Game extends StateBasedGame {
 	
-	public static int width = 1280; 
-	public static int height = 720;  
-	public static final String gameName = "Cuby"; 
-	public static final int menu = 0;
-	public static final int play = 1; 
-	public static final int cell = 32;
+	public static int WIDTH = 1280; 
+	public static int HEIGHT = 720;  
+	public static final String GAMENAME = "Cuby"; 
+	public static final int MENU = 0;
+	public static final int PLAY = 1; 
+	public static final int CELL = 32;
 	
 	public Game(String gameName) {
 		super(gameName);
-		this.addState(new MenuState(menu));
-		this.addState(new PlayState(play));
+		this.addState(new MenuState(MENU));
+		this.addState(new PlayState(PLAY));
 		
 	}
 	
 	public void initStatesList(GameContainer gc) throws SlickException {
 		GameImage.init(gc, this);
-		this.getState(menu).init(gc , this);
-		this.getState(play).init(gc , this);
-		System.out.println(menu);
-		System.out.println(play);		
-		this.enterState(menu);
+		this.getState(MENU).init(gc , this);
+		this.getState(PLAY).init(gc , this);
+		System.out.println(MENU);
+		System.out.println(PLAY);		
+		this.enterState(MENU);
 	}
 	
 	public static void main(String[] args) {
 		AppGameContainer appgc;
 		try {
-			appgc = new AppGameContainer(new Game(gameName));
-			appgc.setDisplayMode(width, height, false);
+			appgc = new AppGameContainer(new Game(GAMENAME));
+			appgc.setDisplayMode(WIDTH, HEIGHT, false);
 			appgc.start(); 
 		}catch(SlickException e) {
 			e.printStackTrace();

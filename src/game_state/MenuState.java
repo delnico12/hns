@@ -30,15 +30,15 @@ public class MenuState extends BasicGameState{
 	}
 	
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException  {		
-		posPlayNow = new Vector2f((Game.width / 2) - (GameImage.playNow.getWidth() / 2), (Game.height / 2) - (GameImage.playNow.getHeight() / 2));
-		posExitGame = new Vector2f((Game.width / 2) - (GameImage.exitGame.getWidth() / 2), (Game.height / 2) - (GameImage.exitGame.getHeight() / 2) + 100);
+		posPlayNow = new Vector2f((Game.WIDTH / 2) - (GameImage.playNow.getWidth() / 2), (Game.HEIGHT / 2) - (GameImage.playNow.getHeight() / 2));
+		posExitGame = new Vector2f((Game.WIDTH / 2) - (GameImage.exitGame.getWidth() / 2), (Game.HEIGHT / 2) - (GameImage.exitGame.getHeight() / 2) + 100);
 		
 		play = new Button(GameImage.playNow, posPlayNow);
 		quit = new Button(GameImage.exitGame, posExitGame);
 		
 		welcome = new Text("Verdana", 15, new Vector2f(0, 0), "Welcome to Cuby");
-		welcome.setX((Game.width / 2) - (welcome.getWidth() / 2));
-		welcome.setY((Game.height / 2) - (welcome.getHeight() / 2) - 200);
+		welcome.setX((Game.WIDTH / 2) - (welcome.getWidth() / 2));
+		welcome.setY((Game.HEIGHT / 2) - (welcome.getHeight() / 2) - 200);
 	}
 	
 	public void render (GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException{

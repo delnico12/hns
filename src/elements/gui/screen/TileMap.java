@@ -56,19 +56,19 @@ public class TileMap extends BasicGameState {
 				   		
 				   		
 				   		/* map center block */
-				   		if(genericMap[i][j] == 0 ) {GameImage.floor.draw((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
+				   		if(genericMap[i][j] == 0 ) {GameImage.floor.draw((i*Game.CELL)+(Game.WIDTH/4)+(Game.CELL/2),j*Game.CELL+(Game.HEIGHT/18)+(Game.CELL/2), Game.CELL, Game.CELL);}
 				   
 				   		/* map border*/
-				   		if(genericMap[i][j] == -2 ) {GameImage.wallUp.draw((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
-				   		if(genericMap[i][j] == -1 ) {GameImage.wallLeft.draw((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
-				   		if(genericMap[i][j] == -4 ) {GameImage.wallDown.draw((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
-				   		if(genericMap[i][j] == -3 ) {GameImage.wallRight.draw((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
+				   		if(genericMap[i][j] == -2 ) {GameImage.wallUp.draw((i*Game.CELL)+(Game.WIDTH/4)+(Game.CELL/2),j*Game.CELL+(Game.HEIGHT/18)+(Game.CELL/2), Game.CELL, Game.CELL);}
+				   		if(genericMap[i][j] == -1 ) {GameImage.wallLeft.draw((i*Game.CELL)+(Game.WIDTH/4)+(Game.CELL/2),j*Game.CELL+(Game.HEIGHT/18)+(Game.CELL/2), Game.CELL, Game.CELL);}
+				   		if(genericMap[i][j] == -4 ) {GameImage.wallDown.draw((i*Game.CELL)+(Game.WIDTH/4)+(Game.CELL/2),j*Game.CELL+(Game.HEIGHT/18)+(Game.CELL/2), Game.CELL, Game.CELL);}
+				   		if(genericMap[i][j] == -3 ) {GameImage.wallRight.draw((i*Game.CELL)+(Game.WIDTH/4)+(Game.CELL/2),j*Game.CELL+(Game.HEIGHT/18)+(Game.CELL/2), Game.CELL, Game.CELL);}
 				   		
 				   		/* map corner*/
-				   		if(genericMap[i][j] == -5 ) {GameImage.wallCornerUL.draw((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
-				   		if(genericMap[i][j] == -6 ) {GameImage.wallCornerUR.draw((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
-				   		if(genericMap[i][j] == -8 ) {GameImage.wallCornerDL.draw((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
-				   		if(genericMap[i][j] == -7 ) {GameImage.wallCornerDR.draw((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
+				   		if(genericMap[i][j] == -5 ) {GameImage.wallCornerUL.draw((i*Game.CELL)+(Game.WIDTH/4)+(Game.CELL/2),j*Game.CELL+(Game.HEIGHT/18)+(Game.CELL/2), Game.CELL, Game.CELL);}
+				   		if(genericMap[i][j] == -6 ) {GameImage.wallCornerUR.draw((i*Game.CELL)+(Game.WIDTH/4)+(Game.CELL/2),j*Game.CELL+(Game.HEIGHT/18)+(Game.CELL/2), Game.CELL, Game.CELL);}
+				   		if(genericMap[i][j] == -8 ) {GameImage.wallCornerDL.draw((i*Game.CELL)+(Game.WIDTH/4)+(Game.CELL/2),j*Game.CELL+(Game.HEIGHT/18)+(Game.CELL/2), Game.CELL, Game.CELL);}
+				   		if(genericMap[i][j] == -7 ) {GameImage.wallCornerDR.draw((i*Game.CELL)+(Game.WIDTH/4)+(Game.CELL/2),j*Game.CELL+(Game.HEIGHT/18)+(Game.CELL/2), Game.CELL, Game.CELL);}
 				   	
 				   		}
 		}
