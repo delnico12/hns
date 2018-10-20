@@ -15,15 +15,25 @@ public class GameImage {
 	public static Image wallRight;
 	public static Image wallUp;
 	public static Image wallDown;
+	public static Image wallCornerUL;
+	public static Image wallCornerUR;
+	public static Image wallCornerDL;
+	public static Image wallCornerDR;
+	
 	public static Image cube;
 	
 	public static void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-		/* Images Dï¿½cor */
+		/* Images Décor */
 		floor = new Image("res/floor.png");
 		wallLeft = new Image("res/wallLeft.png");
 		wallRight = new Image("res/wallRight.png");
 		wallUp= new Image("res/wallUp.png");
 		wallDown = new Image("res/wallDown.png");
+		wallCornerUL = new Image("res/wallCornerUL.png");
+		wallCornerUR = new Image("res/wallCornerUR.png");
+		wallCornerDL= new Image("res/wallCornerDL.png");
+		wallCornerDR = new Image("res/wallCornerDR.png");
+		
 		
 		/* Images Player */
 		cube = new Image("res/cube.png");
