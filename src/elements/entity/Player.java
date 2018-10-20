@@ -9,7 +9,7 @@ import org.newdawn.slick.geom.Vector2f;
 
 import elements.gui.ressources.GameImage;
 
-public class Player {
+public class Player extends Entity{
 	private Vector2f pos;
 	
 	private Image cube;

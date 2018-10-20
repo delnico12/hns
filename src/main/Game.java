@@ -5,6 +5,7 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
+import elements.gui.ressources.GameAnimation;
 import elements.gui.ressources.GameImage;
 import game_state.MenuState;
 import game_state.PlayState;
@@ -26,6 +27,7 @@ public class Game extends StateBasedGame {
 	}
 	
 	public void initStatesList(GameContainer gc) throws SlickException {
+		GameAnimation.init(gc, this);
 		GameImage.init(gc, this);
 		this.getState(MENU).init(gc , this);
 		this.getState(PLAY).init(gc , this);
