@@ -4,7 +4,8 @@ import org.newdawn.slick.*;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-import elements.entity.Joueur;
+
+import elements.entity.Player;
 import elements.gui.ressources.GameImage;
 import elements.gui.screen.TileMap;
 import main.Game;
@@ -17,7 +18,7 @@ public class PlayState extends BasicGameState{
 	
 	private boolean quit = false;
 	TileMap map ;
-	Joueur player;
+	Player player;
 	
 	public PlayState(int State) {
 		
@@ -25,7 +26,7 @@ public class PlayState extends BasicGameState{
 	
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException  {	
 		map = new TileMap();
-		player = new Joueur();
+		player = new Player();
 		player.init(gc, sbg);
 	}
 	

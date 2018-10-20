@@ -1,68 +1,114 @@
 package elements.entity;
 
-import org.newdawn.slick.Animation;
+import java.awt.Rectangle;
+
+import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Image;
+import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
-import org.newdawn.slick.SpriteSheet;
-import org.newdawn.slick.geom.Vector2f;
+import org.newdawn.slick.state.StateBasedGame;
 
+import elements.gui.ressources.GameAnimation;
 import elements.gui.ressources.GameImage;
+import main.Game;
 
-public class Player extends Entity{
-	private Vector2f pos;
+public class Player extends Entity {
 	
-	private Image cube;
-	private SpriteSheet cubeSheetUp, cubeSheetDown,cubeSheetLeft,cubeSheetRight;
-	private Animation cubeAnimationUp,cubeAnimationDown,cubeAnimationLeft,cubeAnimationRight;
+	
 	private int playerTouch = 0;
 	
-	public Player(Vector2f pos) throws SlickException {
-		this.pos.x = pos.x;
-		this.pos.y = pos.y;
+	public void init(GameContainer cg, StateBasedGame sbg) throws SlickException {
 		
-		cubeSheetUp = new SpriteSheet("res/cubeUp.png", 32 , 32);
-		cubeSheetDown = new SpriteSheet("res/cubeDown.png", 32 , 32);
-		cubeSheetLeft = new SpriteSheet("res/cubeLeft.png", 32 , 32);
-		cubeSheetRight = new SpriteSheet("res/cubeRight.png", 32 , 32);
+		startPosX = 640 ;
+		startPosY = 360	;
+		posX = startPosX;
+		posY = startPosY;
+		hp = 200;
+		speedMvmt = 1;
+		destroyable = true;
+		ally = true;
+		hitbox = new Rectangle(posX, posY, Game.CELL, Game.CELL);
 		
-		/* Animations */
-		cubeAnimationUp = new Animation(cubeSheetUp, 200);
-		cubeAnimationDown = new Animation(cubeSheetDown,200);
-		cubeAnimationLeft = new Animation(cubeSheetLeft, 200);
-		cubeAnimationRight = new Animation(cubeSheetRight,200);
 	}
-	
-	public void render() throws SlickException {
-		GameImage.cube.draw(this.pos.x, this.pos.y);
+
+	@Override
+	public void render(GameContainer cg, StateBasedGame sbg, Graphics g) throws SlickException {
 		
-		/* Switch Player Touch */
+		GameImage.cube.draw(posX,posY);
+		
+		
 		switch(playerTouch)
 		{
 			case 0:
-				cube.draw(this.pos.x, this.pos.y);
+				GameImage.cube.draw(posX,posY);
 				break;
 			case 1:
-				cubeAnimationUp.draw(this.pos.x, this.pos.y);
+				GameAnimation.cubeAnimationUp.draw(posX,posY);
 				break;
 			case 2:
-				cubeAnimationDown.draw(this.pos.x, this.pos.y);
+				GameAnimation.cubeAnimationDown.draw(posX,posY);
 				break;
 			case 3:
-				cubeAnimationLeft.draw(this.pos.x, this.pos.y);
+				GameAnimation.cubeAnimationLeft.draw(posX,posY);
 				break;
 			case 4:
-				cubeAnimationRight.draw(this.pos.x, this.pos.y);
+				GameAnimation.cubeAnimationRight.draw(posX,posY);
 				break;
+
 		}
-	}
-	
-	public void update(GameContainer gc, int delta) throws SlickException {
-		/* Update  */
-		cubeAnimationUp.update(delta);
-		cubeAnimationDown.update(delta);
-		cubeAnimationRight.update(delta);
-		cubeAnimationLeft.update(delta);
+		
+		
+		
 		
 	}
+
+	@Override
+	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
+		/* Update  */
+		GameAnimation.cubeAnimationUp.update(delta);
+		GameAnimation.cubeAnimationDown.update(delta);
+		GameAnimation.cubeAnimationRight.update(delta);
+		GameAnimation.cubeAnimationLeft.update(delta);
+		
+		
+		/* Input */	
+		
+		Input input = gc.getInput();
+			
+		
+			/* Outside Menu*/
+		if(input.isKeyDown(Input.KEY_Z)) {
+			
+			posY -= speedMvmt*delta;
+			
+			playerTouch = 1;
+			
+		}
+		else if(input.isKeyDown(Input.KEY_S)) {
+			posY += speedMvmt*delta;
+			
+			playerTouch = 2;
+		}
+		else if(input.isKeyDown(Input.KEY_Q)) {
+			posX -= speedMvmt*delta;
+			
+			
+			playerTouch = 3;
+		}
+		else if(input.isKeyDown(Input.KEY_D)) {
+			posX += speedMvmt*delta;
+			
+			playerTouch = 4;
+		}	
+		else {
+			playerTouch = 0;
+		}
+		
+	}
+
+	
+	
+
+	
 }
