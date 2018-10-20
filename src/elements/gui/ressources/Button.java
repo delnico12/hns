@@ -12,10 +12,10 @@ public class Button {
 	private Vector2f pos;
 	private Rectangle hitbox;
 	
-	public Button(Image img, Vector2f pos, Rectangle hitbox) {
+	public Button(Image img, Vector2f pos) {
 		this.img = img;
 		this.pos = pos;
-		this.hitbox = hitbox;
+		this.hitbox = new Rectangle(this.pos.x, this.pos.y, this.img.getWidth(), this.img.getHeight());
 	}
 	
 	public void render() throws SlickException {

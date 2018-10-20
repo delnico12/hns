@@ -37,12 +37,9 @@ public class MenuState extends BasicGameState{
 		
 		posPlayNow = new Vector2f((Game.width / 2) - (playNow.getWidth() / 2), (Game.height / 2) - (playNow.getHeight() / 2));
 		posExitGame = new Vector2f((Game.width / 2) - (exitGame.getWidth() / 2), (Game.height / 2) - (exitGame.getHeight() / 2) + 100);
-				
-		hitboxPlayNow = new Rectangle(posPlayNow.x, posPlayNow.y, playNow.getWidth(), playNow.getHeight());
-		hitboxExitGame = new Rectangle(posExitGame.x, posExitGame.y, exitGame.getWidth(), exitGame.getHeight());		
-	
-		play = new Button(playNow, posPlayNow, hitboxPlayNow);
-		quit = new Button(exitGame, posExitGame, hitboxExitGame);
+		
+		play = new Button(playNow, posPlayNow);
+		quit = new Button(exitGame, posExitGame);
 		
 		welcome = new Text("Verdana", 15, new Vector2f(0, 0), "Welcome to Cuby");
 		welcome.setX((Game.width / 2) - (welcome.getWidth() / 2));
