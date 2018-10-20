@@ -56,7 +56,7 @@ public class TileMap extends BasicGameState {
 					   /*System.out.println(" i vaut :"+i+" "+"j vaut : "+j+" La case vaut : "+genericMap[i][j]);*/
 				   		System.out.println(genericMap[i].length/2+20*Game.cell);
 				   		if(genericMap[i][j] == 0 ) {g.drawRect((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
-					   
+				   		/*if(genericMap[i][j] == 0 ) {GameImage.cube.draw(10,10);}*/
 				   
 				 
 		

@@ -7,6 +7,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
+import elements.gui.ressources.GameImage;
 import elements.gui.screen.TileMap;
 import main.Game;
 
@@ -34,6 +35,8 @@ public class PlayState extends BasicGameState{
 		
 	}
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException  {
+		
+		
 		/* Images */
 		cube = new Image("res/cube.png");
 		

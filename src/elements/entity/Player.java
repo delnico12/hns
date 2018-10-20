@@ -7,6 +7,8 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.geom.Vector2f;
 
+import elements.gui.ressources.GameImage;
+
 public class Player {
 	private Vector2f pos;
 	
@@ -32,7 +34,7 @@ public class Player {
 	}
 	
 	public void render() throws SlickException {
-		cube.draw(this.pos.x, this.pos.y);
+		GameImage.cube.draw(this.pos.x, this.pos.y);
 		
 		/* Switch Player Touch */
 		switch(playerTouch)
@@ -61,5 +63,6 @@ public class Player {
 		cubeAnimationDown.update(delta);
 		cubeAnimationRight.update(delta);
 		cubeAnimationLeft.update(delta);
+		
 	}
 }

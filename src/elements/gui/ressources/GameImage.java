@@ -17,7 +17,7 @@ public class GameImage extends  BasicGameState {
 	public static Image wallDown;
 	public static Image cube;
 	
-	public void init(GameContainer arg0, StateBasedGame arg1) throws SlickException {
+	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 		/* Images Décor */
 		floor = new Image("res/floor.png");
 		wallLeft = new Image("res/wallLeft.png");
