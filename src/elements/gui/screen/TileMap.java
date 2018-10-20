@@ -34,9 +34,6 @@ public class TileMap extends BasicGameState {
 						{-2 ,0 ,0, 0, 0, 0, 0, 0, 0, 0, 0 ,0, 0, 0, 0, 0, 0, 0, 0,-4},
 						{-2 ,0 ,0, 0, 0, 0, 0, 0, 0, 0, 0 ,0, 0, 0, 0, 0, 0, 0, 0,-4},
 						{-2 ,0 ,0, 0, 0, 0, 0, 0, 0, 0, 0 ,0, 0, 0, 0, 0, 0, 0, 0,-4},
-						{-2 ,0 ,0, 0, 0, 0, 0, 0, 0, 0, 0 ,0, 0, 0, 0, 0, 0, 0, 0,-4},
-						{-2 ,0 ,0, 0, 0, 0, 0, 0, 0, 0, 0 ,0, 0, 0, 0, 0, 0, 0, 0,-4},
-						{-2 ,0 ,0, 0, 0, 0, 0, 0, 0, 0, 0 ,0, 0, 0, 0, 0, 0, 0, 0,-4},
 						{-6,-3,-3,-3,-3,-3,-3,-3,-3,-3,-3,-3,-3,-3,-3,-3,-3,-3,-3,-7}};
 	
 	
@@ -56,20 +53,23 @@ public class TileMap extends BasicGameState {
 		
 		for(int i = 0; i < genericMap.length; i++){
 			   for(int j = 0; j < genericMap[i].length; j++){
-				   
-				   		/* SideBorder */
+				   		
+				   		
+				   		/* map center block*/
 				   		if(genericMap[i][j] == 0 ) {GameImage.floor.draw((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
+				   
+				   		/* map border*/
 				   		if(genericMap[i][j] == -2 ) {GameImage.wallUp.draw((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
 				   		if(genericMap[i][j] == -1 ) {GameImage.wallLeft.draw((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
 				   		if(genericMap[i][j] == -4 ) {GameImage.wallDown.draw((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
 				   		if(genericMap[i][j] == -3 ) {GameImage.wallRight.draw((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
 				   		
-				   		/* BorderBorder */
+				   		/* map corner*/
 				   		if(genericMap[i][j] == -5 ) {GameImage.wallCornerUL.draw((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
 				   		if(genericMap[i][j] == -6 ) {GameImage.wallCornerUR.draw((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
 				   		if(genericMap[i][j] == -8 ) {GameImage.wallCornerDL.draw((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
 				   		if(genericMap[i][j] == -7 ) {GameImage.wallCornerDR.draw((i*Game.cell)+(Game.width/4)+(Game.cell/2),j*Game.cell+(Game.height/18)+(Game.cell/2), Game.cell, Game.cell);}
-				   		
+				   	
 				   		}
 		}
 	}
