@@ -10,6 +10,9 @@ import org.newdawn.slick.state.StateBasedGame;
 public class GameImage {
 
 	/* Create variables images*/
+	public static Image playNow;
+	public static Image exitGame;
+	
 	public static Image floor;
 	public static Image wallLeft;
 	public static Image wallRight;
@@ -23,7 +26,11 @@ public class GameImage {
 	public static Image cube;
 	
 	public static void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-		/* Images Décor */
+		/* Images menu */
+		playNow = new Image("res/playNow.png");
+		exitGame = new Image("res/exitGame.png");
+		
+		/* Images Dï¿½cor */
 		floor = new Image("res/floor.png");
 		wallLeft = new Image("res/wallLeft.png");
 		wallRight = new Image("res/wallRight.png");

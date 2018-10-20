@@ -11,14 +11,12 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 import elements.gui.ressources.Button;
+import elements.gui.ressources.GameImage;
 import elements.gui.ressources.Text;
 import main.Game;
 
 
 public class MenuState extends BasicGameState{
-	
-	Image playNow; // Img bouton
-	Image exitGame; // Img bouton
 	
 	Vector2f posPlayNow, posExitGame; // Position des boutons
 	
@@ -31,15 +29,12 @@ public class MenuState extends BasicGameState{
 		
 	}
 	
-	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException  {
-		playNow = new Image("res/playNow.png");
-		exitGame = new Image("res/exitGame.png");
+	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException  {		
+		posPlayNow = new Vector2f((Game.width / 2) - (GameImage.playNow.getWidth() / 2), (Game.height / 2) - (GameImage.playNow.getHeight() / 2));
+		posExitGame = new Vector2f((Game.width / 2) - (GameImage.exitGame.getWidth() / 2), (Game.height / 2) - (GameImage.exitGame.getHeight() / 2) + 100);
 		
-		posPlayNow = new Vector2f((Game.width / 2) - (playNow.getWidth() / 2), (Game.height / 2) - (playNow.getHeight() / 2));
-		posExitGame = new Vector2f((Game.width / 2) - (exitGame.getWidth() / 2), (Game.height / 2) - (exitGame.getHeight() / 2) + 100);
-		
-		play = new Button(playNow, posPlayNow);
-		quit = new Button(exitGame, posExitGame);
+		play = new Button(GameImage.playNow, posPlayNow);
+		quit = new Button(GameImage.exitGame, posExitGame);
 		
 		welcome = new Text("Verdana", 15, new Vector2f(0, 0), "Welcome to Cuby");
 		welcome.setX((Game.width / 2) - (welcome.getWidth() / 2));
