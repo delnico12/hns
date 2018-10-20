@@ -7,7 +7,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-public class GameImage extends  BasicGameState {
+public class GameImage {
 
 	/* Create variables images*/
 	public static Image floor;
@@ -17,8 +17,8 @@ public class GameImage extends  BasicGameState {
 	public static Image wallDown;
 	public static Image cube;
 	
-	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-		/* Images Décor */
+	public static void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
+		/* Images Dï¿½cor */
 		floor = new Image("res/floor.png");
 		wallLeft = new Image("res/wallLeft.png");
 		wallRight = new Image("res/wallRight.png");
@@ -29,23 +29,4 @@ public class GameImage extends  BasicGameState {
 		cube = new Image("res/cube.png");
 		
 	}
-
-	@Override
-	public void render(GameContainer arg0, StateBasedGame arg1, Graphics arg2) throws SlickException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void update(GameContainer arg0, StateBasedGame arg1, int arg2) throws SlickException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public int getID() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 }

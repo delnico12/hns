@@ -8,9 +8,9 @@ import org.newdawn.slick.geom.Vector2f;
 
 public class Button {
 	
-	Image img;
-	Vector2f pos;
-	Rectangle hitbox;
+	private Image img;
+	private Vector2f pos;
+	private Rectangle hitbox;
 	
 	public Button(Image img, Vector2f pos, Rectangle hitbox) {
 		this.img = img;
