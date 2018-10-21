@@ -12,7 +12,7 @@ import elements.gui.screen.TileMap;
 
 public class TileManage {
 	
-	/* All tiles */
+	/* All tile */
 	static Wall wall;
 	static Floor floor;
 	

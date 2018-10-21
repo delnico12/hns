@@ -55,6 +55,7 @@ public class TileMap extends BasicGameState {
 	@Override
 	public void render(GameContainer arg0, StateBasedGame arg1, Graphics g) throws SlickException {
 		
+		/**/
 		tiles.render(arg0, arg1, g);
 		
 		for(int i = 0; i < genericMap.length; i++){
